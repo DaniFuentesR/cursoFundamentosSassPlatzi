@@ -1,0 +1,399 @@
+$primary-color: #FFEFE7; 
+$secondary-color: #FFDAC6; 
+$tertiary-color: #BABD8D;
+$primary-text-color: #7C6A0A; 
+$secondary-text-color:#E86424;
+$font-stack: 'IBM Plex Sans', sans-serif;;
+
+@mixin flexCenter ($direction, $content, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $align;
+}
+
+@mixin buttonStyle{
+    button {
+        background: none;
+        border-style: none;
+    }
+}
+
+
+html{
+    font-size: 62.5%;
+    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $primary-color;
+    font-family: $font-stack;
+}
+
+nav{ /*Aca estamos ocupando Nesting - Anidado*/
+    width: auto;
+    @include flexCenter(row, space-between, center);/*Space-between me coloca cada elemento en un extremo, si hay un tercer elemento lo coloca en la mitad */
+    color: $primary-text-color;
+    
+    p{
+        font-size: 2.5rem;
+        margin: 10px 0;
+        padding: 30px;
+    }
+
+    .icons{
+        display: flex;
+        gap: 10px;
+        padding: 30px;
+
+        @include buttonStyle;
+    }
+
+}
+
+.main-section{
+    padding: 0;
+    margin: 0;
+}
+
+article{
+    width: auto;
+    color: $primary-text-color;
+    @include flexCenter(row, space-between, center);
+    padding: 0 0 0 30px; 
+    display: flex;
+    justify-content: space-between;
+    padding-top: 70px;
+
+    h1{
+        font-size: 3rem;
+        font-weight: 500;
+    }
+
+    p{
+        font-size: 2rem;
+        padding: 25px 0;
+    }
+    
+        img{
+            width: 25vw;
+            border-radius: 10px;
+            margin-right: 35px;
+            height: 65vh;
+            object-fit: cover;
+        }
+
+        @include buttonStyle; 
+    button{
+        background-color: #FA9500;
+        border-radius: 18px;
+        border: none;
+        color: $primary-color;
+        height: 40px;
+        width: 140px;
+        font-weight: 500;
+        margin-top: 40px;
+        &:hover{
+            transform: scale(1.1); /*Este hover lo que hace es hacerle un pequeño zoom a la imagen cuando estoy encima de ella*/
+        }
+    }
+    
+}
+
+
+section{
+    width: 100%;
+    height: auto;
+    padding: 80px 0 0 30px; ;
+
+    h2{
+        margin-top: 100px;
+        color: $primary-text-color;
+        font-size: 3rem;
+        font-weight: 400;
+    
+    }
+
+    .healthcare {
+        h3{
+            font-weight: 400;
+            font-size: 1.7rem;
+        }
+
+        
+
+        .card-section{
+            display: flex;
+            width: auto;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            column-gap: 300px;
+            row-gap: 200px;
+            flex-wrap: wrap;
+            padding: 50px;
+
+            .product-card{
+                width: 12vw;
+                height: 45vh;
+                background-color: $secondary-color;
+                border-radius: 8px;
+                padding: 30px;
+                color: $primary-text-color;
+                &:hover{
+                    transform: scale(1.1); /*Este hover lo que hace es hacerle un pequeño zoom a la imagen cuando estoy encima de ella*/
+                }
+               
+
+                h3{
+                    font-size: 1.8rem;
+                    font-weight: bold;
+                }
+
+                p{
+                    font-size: 1.4rem;
+                }
+
+            .icon{
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                padding-bottom: 12px;
+
+                svg{
+                    width: 36px;
+                    height: 26px;
+                    stroke: #7C6A0A;
+                }
+            }
+    
+                .product-image{
+    
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+    
+                    img{
+                        width: 16vw;
+                        height: 30vh;
+                        object-fit: cover;
+                        border-radius: 8px;
+                       
+                    }
+                }
+            }
+        }
+
+        
+    }
+ 
+    .furniture{
+
+        padding-top: 30px;
+            h3{
+                font-weight: 400;
+                font-size: 1.7rem;
+            }
+
+            
+    
+            .card-section{
+                display: flex;
+                width: auto;
+                height: auto;
+                justify-content: center;
+                align-items: center;
+                column-gap: 300px;
+                row-gap: 200px;
+                flex-wrap: wrap;
+                padding: 50px;
+    
+                .product-card{
+                    width: 12vw;
+                    height: 45vh;
+                    background-color: #BABD8D;
+                    border-radius: 8px;
+                    padding: 30px;
+                    color: #FFF;
+                    &:hover{
+                        transform: scale(1.1); /*Este hover lo que hace es hacerle un pequeño zoom a la imagen cuando estoy encima de ella*/
+                    }
+
+                    h3{
+                        font-size: 1.8rem;
+                        font-weight: bold;
+                    }
+    
+                    p{
+                        font-size: 1.4rem;
+                    }
+    
+                .icon{
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
+                    padding-bottom: 12px;
+    
+                    svg{
+                        width: 36px;
+                        height: 26px;
+                        stroke: #7C6A0A;
+                    }
+                }
+        
+                    .product-image{
+        
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+        
+                        img{
+                            width: 16vw;
+                            height: 30vh;
+                            object-fit: cover;
+                            border-radius: 8px;
+                            
+                        }
+                    }
+                }
+            }
+    
+            
+        }
+}
+
+.info-section{
+    width: 100%
+}
+
+.about-us{
+    @extend .healthcare;
+    h2{
+        font-weight: 400;
+        padding-bottom: 60px;
+
+    }
+
+    .mision-section{
+        
+        @include flexCenter(row, space-evenly, center);
+        .earth{
+            display: flex;
+            text-align: center;
+            img{
+                width: 7vw;
+                padding-right: 20px;
+                object-fit: cover;
+            }
+
+            p{
+                font-size: 20px;
+                color: #E86424
+            }
+        }
+
+        .Innovation{
+           @extend .earth; 
+        }
+    }
+}
+
+.gallery {
+    margin-top: 250px;
+
+    .gallery-images{
+        @include flexCenter(row, space-between , center);
+        padding: 30px 30px 50px 0;
+        
+        img{
+            width: 30vw;
+            height: 65vh;
+            object-fit: cover;
+            border-radius: 10px;
+            &:hover{
+                transform: scale(1.1); /*Este hover lo que hace es hacerle un pequeño zoom a la imagen cuando estoy encima de ella*/
+            }
+            
+        }
+    }
+}
+
+.location{
+    color: $secondary-text-color;
+    width: 96%;
+    height: auto;
+    .location-image{
+        @include flexCenter(row, center, center);
+        padding-bottom: 20px;
+        
+        img{
+            width: 80%;
+            height: auto;
+        }
+
+    }
+    
+    h3{
+        font-size: 2.3rem;
+        font-weight: 400;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        left: 310px;
+    }
+
+    p{
+        font-size: 1.5rem;
+        font-weight: 100;
+        padding: 0;
+        margin-top: 10px;
+        position: relative;
+        left: 310px;
+    }
+
+    padding-bottom: 80px;
+}
+
+
+footer{
+    color: white;
+    $background: #FA9500;
+    background-color: $background;
+    width: 100%;
+    height: 250px;
+    margin: 0;
+    padding: 0;
+
+    .footer-text{
+        padding: 20px 0 0 40px;
+
+        h3{
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        p{
+            font-size: 1.2rem;
+            font-weight: 100;
+        }
+    }
+
+    .social-media{
+        @include flexCenter(row, center , center);
+        
+        img{
+            margin-left: 30px;
+            
+        }
+       
+        
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,244 @@
+Que es Sass:
+
+    Syntactically Awesome Style Sheets, es un procesador de CSS que se utiliza para trabajar estilos de proyectos agregando funcionalidades con las que no cuenta CSS. 
+
+    Esta basado en Ruby
+
+Caractersiticas: 
+
+    - Variables => Las variables nos serviran para almacenar datos, por ejemplo colores
+
+    - Mixins => Los mixins son parecidos a las funciones, ya que reciben parametros de entrada. 
+
+    - Selectores anidados => Anidar selectores en SASS nos permite escribir menos codigo y que sea mas mantenible
+
+    - Herencia => Nos permite compartir propiedades o estilos entre selectores
+
+
+Cuando vamos a trabajar con SASS se puede hacer con dos extensiones: 
+
+    .sass => Utiliza sintaxis identada, por lo cual no es necesario hacer uso de los brackets {} ni del punto y coma ; 
+
+    .scss => Utiliza la sintaxis tradicional de CSS. 
+
+
+Proceso de Compilado: 
+
+    Para hacer uso de Sass dentro de nuestro proyecto tenemos que tener en cuenta 3 puntos importantes:
+
+        - Input file => Es el archivo donde se van a escribir los estilos directamente con la sintaxis de SASS. Importante escribir dentro del archivo la extensio -scss
+
+        - Output file => Es donde se encontraran los estilos finales escritos en CSS nativo que provinen de nuestro input file
+                        Importante tener en cuenta que nunca se debe editar el output file
+
+        - Comandos para ejecutar y compilar SASS 
+
+
+Ejemplo estructura del proyecto: 
+
+    NombreDelProyecto
+        - index.html
+        - css 
+            - main.css => archivo output
+        -scss
+            main.scss => archivo input 
+
+
+Top-Level statements :
+
+    - Imports 
+    - Definición de un Mixin 
+    - Definición de una función
+    - Módulos
+
+
+Universal Statements => se pueden utilizar en cualquier parte de la hoja de estilos
+
+    - Variables, estructuras de control y las reglas @error, @warn y @debug
+
+    - Declaraciones CSS => Reglas de estilo, At-rules y Mixins 
+
+
+Qué es una variable: 
+
+    Es un espacio asignado en memoria y únicamente puede almacenar un dato.
+
+        - Las variables puedes ser declaradas en cualquier parte de la hoja de estilos. 
+
+        Para declarar una variable hay que hacer uso del simbolo $, de esta manera es posible referenciarla dentro de la hoja de estilos. EJ:
+
+            $primary-color: blue;
+            $secondary-color: green;
+            $tertiary-color: purple; 
+
+        
+    CSS variables: 
+
+        - Pueden tener diferentes valores para distintos elementos
+        - Son declarativas
+
+    SASS Variables;
+
+        - Tienen un valor unico correspondiente a un elemento
+        - Son imperativas - Esto significa que en el momento que actualicemos el valor de nuestra variable va a cambiar en automatico
+
+        !default flag:
+            Se encrga de asignar un valor a la variable si y solo si esa variable no está definida o su valor es null. 
+
+
+SELECTORES:
+
+    Un selector define sobre que elementos se aplicará un conjunto de reglas de CSS.
+
+        Tipo de selectores: 
+
+            - Clase
+            - Id 
+            - Tipo 
+            - Atributo
+
+        
+SCOPE => Hace referencia al contexto en el que existe la variable y donde se puede hacer uso de esa variable 
+
+    - Variables locales: 
+        - Estan declaradas dentro de un bloque {}
+
+        - Cualquier selector anidado puede acceder a las variables locales declaradas dentro del selector 
+
+    
+    - Variables Globales => Por default, todaslas variables declaradas fuera de un selector, son globales, esto significa que se puede acceder a ellas en cualquier parte de nuestra hoja de estilos. 
+
+
+SHADOWING => Las variables locales y globales pueden tener el mismo nombre ya que se encuentran en diferentes niveles de scope.
+
+            Esto puede ayudar a que no se llegue a modificar por error el valor de las variables globales. 
+
+
+!global flag => En caso de querer modificar el valor global de una variable dentro del scope de una variable local, se hace el uso de la flag !global
+
+
+
+At-Rules => Es una declaración que cunple con diferentes funciones y se inicializa con el simbolo @. Dentro de SASS nos ayudan a tener compatibilidad con versiones futuras de CSS 
+
+    Ej:
+        - @use => Nos va a ayudar a importar los modulos, estilos y funciones de otras hojas de estilos, es parecida a la regla import, solo que se diferencia en que...
+
+        - @import => se encarga de hacer los estilos globales
+
+        - @function => Permite crear funciones personalizadas, sin mebargo SASS cuenta con funciones ya existentes
+        
+        - @forward => Recibe como parametro una URL y nos va a ayudar a cargar los estilos de nuestra hoja de estilos. Es importante hacer uso de la regla @use para que los modulos estén disponiblesen nuestra hoja de estilos
+
+        - @extend  => Tiene que ver con el concepto de herencia...
+
+        - @at-root => Se encarga de cargar nuestros estilos en nuestro root de CSS 
+
+    
+    At-rules CSS :
+
+        -   @error: sucede cuando hay un error en la compilación
+            @warn: Sucede cuando hya una alerta que nos dice que tenemos que modificar algo en nuestro codigo 
+            @debug: Encuentra los errores de una manera mas sencilla 
+
+        - @include: Nos va a ayudar a invocar los mixims
+
+        - @for, @if, @each, @while: Estructuras de control - Se pueden utilizar dentro de una función. 
+
+
+    NESTING: 
+
+        - La anidación nos permite tener selectores dentro de otros, lo cual nos ayuda a simplificar código, escribiendo los selectores en el orden que aparecen en el HTML
+
+            Ej: 
+                nav{
+                    ul{
+                        .....
+                        .....
+                        .....
+                    }
+                    li{
+                        ....
+                    }
+                    a{
+                        .....
+                        ....
+                        .....
+                    }
+                }
+
+
+EXPRESIONES:
+
+    Es todo aquello que va del lado derecho de una variable, admitiendo varios tipos de valores. Estas expresiones son mucho mas poderosas que un valor de CSS normal ya que se le puede pasar como argumentos a las funciones y a los mixims.
+
+        - Expresiones literales: 
+
+            - Números
+            - Strings
+            - Colores 
+            - Booleanos 
+            - Null 
+            - Listas 
+            - Mapas
+
+
+
+HERENCIA: 
+
+    Es un mecanismo mediante el cual un selector puede recibir estilos CSS que vienen de variables utilizadas previamente
+
+    Dentro de SASS:
+
+        - directiva @extend: nos permite organizar codigo y crear CSS mas limpio
+            EJ:
+                .error{
+                    border: 1px #f00
+                }
+
+                &--serious { => modificador de clase
+
+                    @extend .error;
+                    border-width: 3px; 
+                }
+
+
+Mixins => Nos ayudan a simplificar nuestro codigo. Permiten definir estilos que se pueden reutilizar en toda su hojade estilos y facilitan evitar el uso de clases no semanticas. 
+
+    Se delcaran => @mixin seguido del nombre que queremos asignar y se invoca con @include seguido del nombre del mixin
+
+        EJ: 
+
+            @mixin horizontal-list {
+                li {
+                    display: inline-block;
+                    margin: {
+                        left: -2px;
+                        right: 2em;
+                    }
+                }
+            }
+
+            nav ul {
+                @include horizontal-list: 
+            }
+
+        
+        Argumentos en mixins: 
+
+            - Un argumento es el nombre de una variable que está separada por una coma
+
+            - La utilidad de los mixins no sería tal si no tuvieran la capacidad de recibir argumentos. 
+
+
+            @mixin circle2 (¢width, $height, $color) {
+                width: $width;
+                height: $height;
+                background: $color; 
+            }
+
+
+
+
+
+
+    

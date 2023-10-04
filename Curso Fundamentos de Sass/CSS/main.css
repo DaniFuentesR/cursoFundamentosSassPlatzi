@@ -1,0 +1,327 @@
+@charset "UTF-8";
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFEFE7;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+nav { /*Aca estamos ocupando Nesting - Anidado*/
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /*Space-between me coloca cada elemento en un extremo, si hay un tercer elemento lo coloca en la mitad */
+  color: #7C6A0A;
+}
+nav p {
+  font-size: 2.5rem;
+  margin: 10px 0;
+  padding: 30px;
+}
+nav .icons {
+  display: flex;
+  gap: 10px;
+  padding: 30px;
+}
+nav .icons button {
+  background: none;
+  border-style: none;
+}
+
+.main-section {
+  padding: 0;
+  margin: 0;
+}
+
+article {
+  width: auto;
+  color: #7C6A0A;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 0 30px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 70px;
+}
+article h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+article p {
+  font-size: 2rem;
+  padding: 25px 0;
+}
+article img {
+  width: 25vw;
+  border-radius: 10px;
+  margin-right: 35px;
+  height: 65vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+article button {
+  background: none;
+  border-style: none;
+}
+article button {
+  background-color: #FA9500;
+  border-radius: 18px;
+  border: none;
+  color: #FFEFE7;
+  height: 40px;
+  width: 140px;
+  font-weight: 500;
+  margin-top: 40px;
+}
+article button:hover {
+  transform: scale(1.1); /*Este hover lo que hace es hacerle un pequeño zoom a la imagen cuando estoy encima de ella*/
+}
+
+section {
+  width: 100%;
+  height: auto;
+  padding: 80px 0 0 30px;
+}
+section h2 {
+  margin-top: 100px;
+  color: #7C6A0A;
+  font-size: 3rem;
+  font-weight: 400;
+}
+section .healthcare h3, section .about-us h3 {
+  font-weight: 400;
+  font-size: 1.7rem;
+}
+section .healthcare .card-section, section .about-us .card-section {
+  display: flex;
+  width: auto;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 300px;
+       column-gap: 300px;
+  row-gap: 200px;
+  flex-wrap: wrap;
+  padding: 50px;
+}
+section .healthcare .card-section .product-card, section .about-us .card-section .product-card {
+  width: 12vw;
+  height: 45vh;
+  background-color: #FFDAC6;
+  border-radius: 8px;
+  padding: 30px;
+  color: #7C6A0A;
+}
+section .healthcare .card-section .product-card:hover, section .about-us .card-section .product-card:hover {
+  transform: scale(1.1); /*Este hover lo que hace es hacerle un pequeño zoom a la imagen cuando estoy encima de ella*/
+}
+section .healthcare .card-section .product-card h3, section .about-us .card-section .product-card h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+section .healthcare .card-section .product-card p, section .about-us .card-section .product-card p {
+  font-size: 1.4rem;
+}
+section .healthcare .card-section .product-card .icon, section .about-us .card-section .product-card .icon {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 12px;
+}
+section .healthcare .card-section .product-card .icon svg, section .about-us .card-section .product-card .icon svg {
+  width: 36px;
+  height: 26px;
+  stroke: #7C6A0A;
+}
+section .healthcare .card-section .product-card .product-image, section .about-us .card-section .product-card .product-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+section .healthcare .card-section .product-card .product-image img, section .about-us .card-section .product-card .product-image img {
+  width: 16vw;
+  height: 30vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+section .furniture {
+  padding-top: 30px;
+}
+section .furniture h3 {
+  font-weight: 400;
+  font-size: 1.7rem;
+}
+section .furniture .card-section {
+  display: flex;
+  width: auto;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 300px;
+       column-gap: 300px;
+  row-gap: 200px;
+  flex-wrap: wrap;
+  padding: 50px;
+}
+section .furniture .card-section .product-card {
+  width: 12vw;
+  height: 45vh;
+  background-color: #BABD8D;
+  border-radius: 8px;
+  padding: 30px;
+  color: #FFF;
+}
+section .furniture .card-section .product-card:hover {
+  transform: scale(1.1); /*Este hover lo que hace es hacerle un pequeño zoom a la imagen cuando estoy encima de ella*/
+}
+section .furniture .card-section .product-card h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+section .furniture .card-section .product-card p {
+  font-size: 1.4rem;
+}
+section .furniture .card-section .product-card .icon {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 12px;
+}
+section .furniture .card-section .product-card .icon svg {
+  width: 36px;
+  height: 26px;
+  stroke: #7C6A0A;
+}
+section .furniture .card-section .product-card .product-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+section .furniture .card-section .product-card .product-image img {
+  width: 16vw;
+  height: 30vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+
+.info-section {
+  width: 100%;
+}
+
+.about-us h2 {
+  font-weight: 400;
+  padding-bottom: 60px;
+}
+.about-us .mision-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.about-us .mision-section .earth, .about-us .mision-section .Innovation {
+  display: flex;
+  text-align: center;
+}
+.about-us .mision-section .earth img, .about-us .mision-section .Innovation img {
+  width: 7vw;
+  padding-right: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about-us .mision-section .earth p, .about-us .mision-section .Innovation p {
+  font-size: 20px;
+  color: #E86424;
+}
+.gallery {
+  margin-top: 250px;
+}
+.gallery .gallery-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 30px 50px 0;
+}
+.gallery .gallery-images img {
+  width: 30vw;
+  height: 65vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+.gallery .gallery-images img:hover {
+  transform: scale(1.1); /*Este hover lo que hace es hacerle un pequeño zoom a la imagen cuando estoy encima de ella*/
+}
+
+.location {
+  color: #E86424;
+  width: 96%;
+  height: auto;
+  padding-bottom: 80px;
+}
+.location .location-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.location .location-image img {
+  width: 80%;
+  height: auto;
+}
+.location h3 {
+  font-size: 2.3rem;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  left: 310px;
+}
+.location p {
+  font-size: 1.5rem;
+  font-weight: 100;
+  padding: 0;
+  margin-top: 10px;
+  position: relative;
+  left: 310px;
+}
+
+footer {
+  color: white;
+  background-color: #FA9500;
+  width: 100%;
+  height: 250px;
+  margin: 0;
+  padding: 0;
+}
+footer .footer-text {
+  padding: 20px 0 0 40px;
+}
+footer .footer-text h3 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+footer .footer-text p {
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+footer .social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer .social-media img {
+  margin-left: 30px;
+}/*# sourceMappingURL=main.css.map */
